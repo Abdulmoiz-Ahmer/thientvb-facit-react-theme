@@ -77,8 +77,10 @@ const InputGroup = forwardRef(({ id, className, children, isWrap, size, ...props
 			{...props}>
 			{Children.map(children, (item, index) =>
 				item?.props?.isValidMessage
-					? cloneElement(item, { key: index, isValidMessage: false })
-					: cloneElement(item, { key: index }),
+					// eslint-disable-next-line react/no-array-index-key
+					?cloneElement(item, {key: index, isValidMessage: false})
+					// eslint-disable-next-line react/no-array-index-key
+					:cloneElement(item, {key: index}),
 			)}
 			<Validation
 				isTouched={_isTouched}

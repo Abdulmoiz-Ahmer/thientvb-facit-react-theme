@@ -42,6 +42,7 @@ export const Toast = ({ children, onDismiss }) => {
 		<div className='toast show' role='alert' aria-live='assertive' aria-atomic='true'>
 			{Children.map(children, (child, index) =>
 				cloneElement(child, {
+					// eslint-disable-next-line react/no-array-index-key
 					key: index,
 					onDismiss: (
 						<button
